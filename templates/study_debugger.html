@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% set active_page = 'debugger' %}
+{% set page_heading = 'Study Debugger' %}
+{% block title %}Study Debugger · LearnMind{% endblock %}
+{% block content %}
+<section class="page-intro"><div><span class="eyebrow-pill">PRACTICE · REVIEW · IMPROVE</span><h1>Study Debugger</h1><p>Test what you know, identify topics that need attention and learn from every answer.</p></div></section>
+<section class="panel quiz-setup"><div class="quiz-setup-copy"><span class="feature-icon icon-mint">◈</span><div><h2>Start an assessment</h2><p class="muted">Each quiz has five questions. Your result is saved to Progress automatically.</p></div></div><div class="quiz-controls"><label for="quizSubject">Choose a subject</label><select id="quizSubject">{% for subject in quiz_subjects %}<option value="{{ subject }}">{{ subject }}</option>{% endfor %}</select><button type="button" class="button button-primary" id="loadQuizBtn">Load quiz →</button></div></section>
+<div id="quizNotice" class="notice hidden" role="status"></div>
+<section class="panel quiz-panel hidden" id="quizPanel"><div class="quiz-panel-heading"><div><span class="panel-kicker">KNOWLEDGE CHECK</span><h2 id="quizTitle">Practice quiz</h2></div><span class="question-count" id="questionCount">5 questions</span></div><form id="quizForm"><div id="questionList"></div><div class="quiz-form-actions"><button type="button" class="button button-secondary" id="resetQuizBtn">Reset answers</button><button type="submit" class="button button-primary" id="submitQuizBtn">Submit assessment →</button></div></form></section>
+<section class="panel result-panel hidden" id="quizResult"><div class="result-header"><div><span class="panel-kicker">ASSESSMENT COMPLETE</span><h2>Your performance report</h2></div><div class="result-score" id="resultScore">0/5</div></div><div class="result-summary"><strong id="resultPercent">0%</strong><span id="resultMessage">Keep practising.</span></div><div class="result-review" id="resultReview"></div><div class="result-actions"><a class="button button-secondary" href="{{ url_for('progress') }}">View progress</a><button class="button button-primary" id="retryQuizBtn" type="button">Try again →</button></div></section>
+{% if not quiz_subjects %}<div class="notice notice-warning">Add one of the supported core subjects to My Learning to take a quiz.</div>{% endif %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/quiz.js') }}" defer></script>{% endblock %}

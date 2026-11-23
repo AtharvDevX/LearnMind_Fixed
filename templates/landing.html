@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LearnMind | Smart Learning Companion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body class="landing-body">
+  <nav class="landing-nav"><a class="brand landing-brand" href="{{ url_for('landing') }}"><span class="brand-icon">🧠</span><span>Learn<span class="brand-accent">Mind</span></span></a><div><a href="{{ url_for('login') }}">Login</a><a class="button button-primary button-small" href="{{ url_for('signup') }}">Create account</a></div></nav>
+  <main>
+    <section class="landing-hero">
+      <div class="hero-copy"><span class="eyebrow-pill">YOUR PERSONAL LEARNING SPACE</span><h1>Learn smarter.<br><span>Grow faster.</span></h1><p>Meet your personal AI learning companion. Organize your subjects, understand difficult topics, test your knowledge and track your progress — all in one place.</p><div class="hero-actions"><a class="button button-primary" href="{{ url_for('signup') }}">Get started <span>→</span></a><a class="button button-secondary" href="{{ url_for('login') }}">I already have an account</a></div><div class="hero-note"><span class="online-dot"></span> One workspace for your learning journey</div></div>
+      <div class="hero-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-brain">🧠</div><div class="float-card float-card-top"><span>✦</span><div><b>AI Study Assistant</b><small>Learn concepts clearly</small></div></div><div class="float-card float-card-bottom"><span>↗</span><div><b>Progress tracking</b><small>See how far you've come</small></div></div></div>
+    </section>
+    <section class="landing-features"><div class="section-heading"><span class="eyebrow-pill">BUILT FOR STUDENTS</span><h2>Everything you need to learn better</h2><p>Simple tools that help you stay organized, practice consistently and understand more.</p></div><div class="feature-grid"><article class="feature-card"><div class="feature-icon lavender">▤</div><h3>My Learning</h3><p>Organize your subjects and update your learning progress.</p></article><article class="feature-card"><div class="feature-icon peach">✧</div><h3>AI Assistant</h3><p>Ask questions and get step-by-step explanations from AI.</p></article><article class="feature-card"><div class="feature-icon mint">◈</div><h3>Study Debugger</h3><p>Take short quizzes, discover weak topics and learn from answers.</p></article><article class="feature-card"><div class="feature-icon blue">▥</div><h3>Progress</h3><p>Review your quiz history and understand your learning trends.</p></article></div></section>
+  </main>
+  <footer class="landing-footer">© 2026 LearnMind · Your Smart Learning Companion</footer>
+</body>
+</html>

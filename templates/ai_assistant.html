@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% set active_page = 'assistant' %}
+{% set page_heading = 'AI Study Assistant' %}
+{% block title %}AI Assistant · LearnMind{% endblock %}
+{% block content %}
+<section class="ai-intro"><div><span class="eyebrow-pill">YOUR STUDY COMPANION</span><h1>Ask. Understand. Learn.</h1><p>Ask questions, understand difficult topics and make learning easier with AI.</p></div><button class="button button-secondary button-small" id="clearChatBtn" type="button">Clear conversation</button></section>
+<section class="panel chat-panel"><div class="chat-header"><div class="chat-avatar">✧</div><div><b>LearnMind AI</b><small><span class="online-dot"></span> Ready to help you learn</small></div><span class="chat-context">Academic assistant</span></div><div class="chat-messages" id="chatMessages" aria-live="polite"><div class="chat-empty" id="chatLoading">Loading your conversation…</div></div><div class="chat-suggestions" id="chatSuggestions"><button type="button" data-prompt="Explain Artificial Intelligence with simple examples">Artificial Intelligence</button><button type="button" data-prompt="Explain neural networks step by step">Neural Networks</button><button type="button" data-prompt="Teach me Python basics with a small code example">Python Basics</button><button type="button" data-prompt="Help me prepare for my next university exam">Exam Preparation</button></div><form class="chat-form" id="chatForm"><label class="visually-hidden" for="chatQuestion">Your question</label><textarea id="chatQuestion" rows="1" maxlength="2000" placeholder="Ask your study question…" required></textarea><button class="button button-primary" id="chatSendBtn" type="submit">Send <span>➤</span></button></form><div class="chat-footnote">AI can make mistakes. Verify important academic information with your study material.</div></section>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>{% endblock %}
